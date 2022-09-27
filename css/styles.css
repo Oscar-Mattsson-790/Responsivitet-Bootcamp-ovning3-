@@ -1,0 +1,141 @@
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 15% 15% 25% auto;
+  grid-template-areas:
+    "header . ."
+    "nav nav nav"
+    "aside-left aside-left aside-right"
+    "aside-left aside-left aside-right"
+    "aside-left aside-left aside-right"
+    "footer footer footer";
+  gap: 20px;
+}
+
+.header {
+  grid-area: header;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+}
+.header-dot {
+  background-color: #480063;
+  height: 95px;
+  width: 95px;
+  border-radius: 50%;
+}
+.nav {
+  grid-area: nav;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+.nav-box {
+  background-color: #b2008a;
+  width: 100%;
+  height: 80px;
+  border-radius: 75px;
+}
+.aside-left {
+  grid-area: aside-left;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  row-gap: 30px;
+  column-gap: 1px;
+  flex-wrap: wrap;
+}
+.aside-box-left {
+  background-color: #fd96a9;
+  width: 390px;
+  height: 150px;
+  margin-left: 20px;
+}
+
+.aside-right {
+  grid-area: aside-right;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 10px;
+}
+.aside-box-right {
+  background-color: #f42dac;
+  width: 90%;
+  height: 104px;
+  margin-right: 620px;
+}
+
+.footer {
+  grid-area: footer;
+  background-color: #c1c99a;
+  height: 100px;
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-areas:
+      "header"
+      "nav"
+      "nav"
+      "nav"
+      "aside-left"
+      "aside-left"
+      "aside-left"
+      "aside-left"
+      "aside-right"
+      "aside-right"
+      "aside-right"
+      "footer";
+    flex-wrap: wrap;
+    justify-items: center;
+    padding: 0;
+    margin: 0;
+  }
+
+  .header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .nav {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .aside-left {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .aside-right {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .footer {
+    width: 100%;
+    height: 200px;
+  }
+}
